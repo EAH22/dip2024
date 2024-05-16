@@ -1,0 +1,12 @@
+Scanner une image : 
+scanimage --format=png --output-file scan.png
+
+Trimmer le scan : 
+./multicrop -c 10,10 scans/scan.png scans/scan_fixed6.png
+
+Cropper :
+convert scans/scan_fixed6-000.png -crop 1100x1619+0+0 scans/cropped.png
+
+if [ ! -s  /scans/tmp/scan.png] ; then 
+    rm /scans/tmp/scan.png
+fi
